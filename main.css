@@ -1,0 +1,55 @@
+body {
+    margin-top: 1%;
+    margin-left: 1%;
+    background-color: black;
+}
+
+header {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    color: white;
+}
+
+#title {
+    font-family: Trattatello, fantasy;
+    color: white;
+    text-decoration: none;
+    width: 5%;
+    margin-left: 2%;
+    font-size:larger;
+}
+
+#header-description {
+    width: 90%;
+    float:right;
+    margin-top: 1%;
+    font-size: large;
+}
+
+#title:hover {
+    color: #539f61;
+    text-decoration: none;
+}
+
+.form-signin {
+    margin-top: 40%;
+}
+
+#l-btn {
+    width: 50%;
+    background-color: #539f61;
+    border: 0;
+}
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 20%;
+}
+
+@media screen and (max-width: 430px) {
+    footer {
+        margin-top: 2em;
+        height: 4cm;
+    }
+}

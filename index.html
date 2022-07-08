@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VetSim</title>
+
+  <!-- font poppins source links -->
+  <link rel="preconnect" href='https://fonts.googleapis.com'>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/ecgGraph.css" rel="stylesheet">  <!-- svg formatting -->
+
+  <!-- Commented files are currently unused!! -->
+  <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
+  <!-- <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'> -->
+  <!-- <link href="css\normalize.css" rel="stylesheet"> -->
+
+  <script src="https://kit.fontawesome.com/3a60cdc76d.js" crossorigin="anonymous"></script>
+     
+</head>
+
+<body>
+  <div class="monitor-container">
+    <div class="graph-box">
+      <div class="monitor-left-box">
+          <div class="monitor-box-title-left">ECG</div>
+          <div class="monitor-box-title-right">BPM</div>
+          <div id="ecg-number" style="color: #0DF825;"><b>80</b></div>
+      </div>
+      <div class="monitor-right-box">
+        <div class="ecg-graph">
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+            <polyline fill="none" stroke="#0DF825" stroke-width="5" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"/>
+          </svg>
+        </div>
+        <div class="fade-in"></div>
+        <div class="fade-out"></div>
+      </div>
+    </div>
+      
+    <div class="graph-box">
+        <div class="monitor-left-box">
+            <div class="monitor-box-title-left">SPO2</div>
+            <div class="monitor-box-title-right">%</div>
+            <div id="spo2-number" style="color: #F80D38"><b>80</b></div>
+        </div>
+        <div class="monitor-right-box">
+          <div class="ecg-graph">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+              <polyline fill="none" stroke="#F80D38" stroke-width="5" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+              />
+            </svg>
+          </div>
+          <div class="fade-in"></div>
+          <div class="fade-out"></div>
+        </div>
+    </div>
+
+    <div class="graph-box">
+      <div class="monitor-left-box">
+        <div class="monitor-box-title-left">EtCO2</div>
+        <div class="monitor-box-title-right">mmHg</div>
+        <div id="etco2-number" style="color: #03DBE9"><b>80</b></div>
+      </div>
+      <div class="monitor-right-box">
+        <div class="ecg-graph">
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+            <polyline fill="#03DBE9" stroke="#03DBE9" stroke-width="5" stroke-miterlimit="10" points=" 0 45.486 , 34 45 , 35 34 , 38 17 , 45 12 , 53 11 , 75 11 , 78 18 , 85 19 , 88 27 , 95 34 , 100 45 , 150 45.486, 0 45.486"/>
+          </svg>
+        </div>
+        <div class="fade-in"></div>
+        <div class="fade-out"></div>
+      </div>
+    </div>
+
+    <div class="graph-box">
+      <div class="monitor-left-box">
+          <div class="monitor-box-title-left">Temp</div>
+          <div class="monitor-box-title-right">&#x2103;</div>
+          <div id="temp-number" style="color: #D3B9DF"><b>37.7</b></div>
+      </div>
+      <div class="monitor-right-box" id="nibp-graph">
+        <div class="monitor-box-title-left">NIBP</div>
+        <div class="monitor-box-title-right">mmHg</div>
+        <div id="nibp-value">
+          <div id="nibp-value1"><b>91</b></div>
+          <div id="nibp-value2"><b>/34</b></div>
+          <div id="nibp-value3"><b>53</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-2 patientinfo wf-section">
+
+    <div class="user-info-bar">
+      <div class="user-info-bar-items">
+          <div class="user-ellipse">
+            <img class="user-ellipse" src="assets/Species/cat-icon1.png" alt="veterinary anesthesia simulator cat logo">
+          </div>
+      </div>
+
+      <div class="user-info-bar-items"><div class="user-info-bar-text-species">Cat</div></div>
+      <div class="user-info-bar-items"><div class="user-info-bar-text">Female</div></div>
+      <div class="user-info-bar-items"><div class="user-info-bar-text">Cartoon</div></div>
+      <div class="user-info-bar-items"><div class="user-info-bar-text">5 Years</div></div>
+    </div>
+  </div>
+
+  <div class="div-block-15">
+    <div class="logoblock"><img src="assets/img/VetSim.png" loading="lazy" alt="veterinary anesthesia simulator" class="image vetsimlogo"></div>
+    <div class="navigation">
+      <div class="sidebar-menu-tab">
+        <a href="#" class="navigationbutton w-button" onclick="showDashboardTab()">Dashboard</a>
+      </div>
+      <div class="sidebar-menu-tab">
+        <a href="#" class="navigationbutton w-button" onclick="showDrugsTab()">Drugs</a>
+      </div>
+      <div class="sidebar-menu-tab">
+        <a href="#" class="navigationbutton w-button" onclick="showFluidsTab()">Fluids</a>
+      </div>
+      <div class="sidebar-menu-tab">
+        <a href="#" class="navigationbutton w-button" onclick="showSettingsTab()">Settings</a>
+      </div>
+    </div>
+
+    <div class="timesection wf-section"> 
+      <div id="timer"> 
+        <b><label id="minutes">00</label>:<label id="seconds">00</label></b> 
+      </div>
+    </div>
+
+  </div>
+
+  <div class="navigationtabs">
+    <div class="tabbody">
+      <div id="caseheader"> <h3>VetSim Simulator Dalhousie University</h3><span>- Case Example</span></div>
+      <div class="simulator-dashboard-groups" id="dashboardtab">
+        <h2>Dashboard</h2>
+        <Br>
+        
+        <h4 class="selectTitle">Case Library:</h4>
+        <div class="select">
+          <select id="dashboard-case-selection">
+            <option value="1">Select A Case To Start</option>
+            <option value="2">Case 1 - </option>
+            <option value="3">Case 2 - </option>
+          </select>
+        </div>
+        <div class="splashimage"> <img src="assets/img/anesthSplash.png" alt="veterinary anesthesia simulator logo"></div>
+        
+      </div>
+
+      <div class="simulator-dashboard-groups" id="drugstab">
+        <h2>Drugs</h2>
+        <Br>
+        <h4 class="selectTitle">Drug Administration:</h4>
+        <div class="select">
+          <select id="drop-down-menu-drugs">
+            <option value="1">Select Drug</option>
+            <option value="2">Propofol Bolus</option>
+            <option value="3">Isoflurane</option>
+            <option value="4">Hydromorphone</option>
+          </select>
+        </div>
+        <button class="button-submit-selection" id="button-submit-drugs">submit</button>
+      </div>
+
+      <div class="simulator-dashboard-groups" id="fluidstab">
+        <h2>Fluid Administration:</h2>
+        <Br>
+        <h4 class="selectTitle">IV Fluid Administration Orders</h4>
+        <div class="select">
+          <select id="drop-down-menu-fluids">
+            <option value="1">Select Fluid</option>
+            <option value="2">Crystalloid</option>
+          </select>
+        </div>
+        <button class="button-submit-selection" id="button-submit-fluids">submit</button>
+      </div>
+
+      <div class="simulator-dashboard-groups" id="settingstab"></div>
+
+    </div>
+  </div>
+
+  <script  src="js/main.js"></script>
+  <script  src="js/navMenu.js"></script>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=629d2dfb4ed0f6528a33441d"  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  
+</body>
+
+
+</html>

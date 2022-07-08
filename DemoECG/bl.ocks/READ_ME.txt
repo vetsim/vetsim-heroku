@@ -1,0 +1,1 @@
+This ECG Demo was modified by Nathan Patterson. The original scripts for this example of a D3.js ECG graph were retrieved from: https://bl.ocks.org/Berzeg/3909a8234433d8079211a2145a56b21c Author @Hashem Berzeg

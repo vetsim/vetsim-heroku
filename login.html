@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- <link href="main.css" rel="stylesheet"> -->
+     <!-- Style sheet source directory needs to be modified later  -->
+    <title>VetSim | Login</title>
+    <style>
+        body {
+            margin-top: 1%;
+            margin-left: 1%;
+            background-color: black;
+        }
+
+        header {
+            background-color: black;
+            position: fixed;
+            width: 100%;
+            color: white;
+        }
+
+        #title {
+            font-family: Trattatello, fantasy;
+            color: white;
+            text-decoration: none;
+            width: 5%;
+            margin-left: 2%;
+            font-size:larger;
+        }
+
+        #header-description {
+            width: 90%;
+            float:right;
+            margin-top: 1%;
+            font-size: large;
+        }
+
+        #title:hover {
+            color: #539f61;
+            text-decoration: none;
+        }
+
+        .form-signin {
+            margin-top: 40%;
+        }
+
+        #l-btn {
+            width: 50%;
+            background-color: #539f61;
+            border: 0;
+        }
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 20%;
+        }
+
+        @media screen and (max-width: 430px) {
+            #header-description {
+                width: 70%;
+                float:right;
+                margin-top: 5%;
+                font-size: x-small;
+            }
+            footer {
+                margin-top: 40%;
+ 
+                font-size: x-small;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>   
+                <a id="title" href="index.html">VetSim</a>
+                <div id="header-description"> | The world's first veterinary anesthesia simulator</div>
+
+            </h1>
+        </nav>
+    </header>
+    
+    <main id="pg-main-content">
+        <div id="login-form" class="py-6 text-center container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <form class="form-signin" >
+                        <!-- login form  -->
+                        <!-- Bootstrap Login form used from example on getbootstrap.com,
+							available here: https://getbootstrap.com/docs/4.0/examples/sign-in/
+						-->
+                        <input id="l-uname" type="text" class="form-control" placeholder="Username" required autofocus>
+                        <br>
+                        <input id="l-passwd" type="password" class="form-control" placeholder="Password" required>
+                        <br>
+                        <input id="l-btn" type="button" class="btn btn-lg btn-primary btn-block" value="Login" onclick="Login()"> 
+                        <!-- call the function after clicked  -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p> Copyright &copy; 2022 Anesthesia Simulator Project - All rights reserved</p>
+    </footer>
+
+</body>
+</html>
